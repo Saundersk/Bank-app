@@ -1,0 +1,27 @@
+class Account():
+    def __init__(self,name,balance=0):
+        
+        self.name = name
+        self.balance = balance
+        
+        
+    
+    def showBalance(self):
+        
+        return f'Your balance is: ${self.balance}'
+        
+        
+    def deposit(self,amount):
+        
+        self.balance += amount
+        return f"Deposit: ${amount} accepted. New balance: ${self.balance}"
+    
+    def withdrawal(self,amount):
+        if amount > self.balance:
+            return 'Insufficient Funds'
+        
+        self.balance -= amount
+        return f"Withdrawal: ${amount} accepted. New balance: ${self.balance}"
+        
+    def __str__(self):
+        return f'Owner: {self.name} \nBalance: {self.balance}'
